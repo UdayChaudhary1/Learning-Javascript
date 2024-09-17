@@ -21,3 +21,28 @@ For Boolean
 0 is false and 1 is true
 "" is false and "something" is true
 */
+
+let str1 = "Hello"
+let str2 = " You!"
+console.log(str1 + str2) // Hello You!
+
+console.log("1" + 2) // 12
+console.log(1 + "2") // 12
+console.log("1" + 2 + 2) // 122
+console.log(1 + 2 + "2") // 32
+console.log(true) // true
+console.log(+true) // 1 it runs but Bad code
+//console.log(true+) // error
+console.log(+"") // 0 it runs but bad code
+
+let x = 3;
+const y = x++;
+
+console.log(`x:${x}, y:${y}`); // Expected output: "x:4, y:3"
+
+let a = 3;
+const b = ++a;
+
+console.log(`a:${a}, b:${b}`); // Expected output: "a:4, b:4"
+// postfix increments and returns the value before incrementing
+// prefix increments and returns the value after incrementing
