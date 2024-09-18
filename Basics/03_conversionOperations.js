@@ -46,3 +46,66 @@ const b = ++a;
 console.log(`a:${a}, b:${b}`); // Expected output: "a:4, b:4"
 // postfix increments and returns the value before incrementing
 // prefix increments and returns the value after incrementing
+
+console.log("2" > 1) // true
+console.log("02" > 1) // true
+console.log(null < 0) // false
+console.log(null > 0) // false
+console.log(null == 0) // false
+console.log(null >= 0) // true
+
+// Comparisons(>, <, <=, >=) convert null to a number, trating it as 0. that is why null >= 0 is true. undefined always gives false. == is called equality check while === is strict check.
+console.log("2" == 2) // true
+console.log("2" === 2) // false
+
+// Comparisons with null and undefined are avoided because they are confusing.
+
+/*
+two types of datatypes - primitive and non-primitive
+1. primitive datatype - call by value - If you copy them then the original reference is not given but a copy and all the changes are made in the copy
+a. string 
+b. number
+c. boolean
+d. null
+e. undefined
+f. symbol 
+g. bigInt
+
+2. Non-primitive or reference type
+a. array
+b. object
+c. function
+*/
+
+const num = 2340917350139754n // putting n at the end makes it bigint
+
+/*
+(typeof undefined) - undefined
+(typeof null) - object
+(typeof boolean) - boolean
+(typeof number) - number
+(typeof symbol) - symbol
+(typeof function) - function
+(typeof object(native and does not call implement)) - object
+(typeof object(native or host and does not implement call)) - function
+(typeof object(host and does not implement)) - implementation defined except may not be undefined, boolean, number or string
+*/
+
+/*
+Two types of memory - stack(primitive) and heap(non-primitive)
+for stack memory we get the copy of what is defined, while in heap we get a reference
+*/
+
+//Stack
+let theName = "hello"
+let anotherName = theName
+anotherName = "changing value" //it will not change the value in theName
+
+//heap
+
+let userOne = {
+    id: 123,
+    firstName: "hello"
+}
+let userTwo = userOne
+userTwo.firstName = "Bye" // This will change the value for userOne too.
